@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cars</title>
+</head>
+<body>
+<form th:object="${addCar}" th:action="@{/car}" method="post">
+    <p>Marka: <input th:type="text" th:field="*{mark}" required></p>
+    <p>Model: <input th:type="text" th:field="*{model}" required></p>
+    <p>Rok produkcji: <input th:type="text" th:field="*{year}" required></p>
+    <input type="submit" value="AddCar">
+</form>
+<br>
+<form th:object="${serachParam}" th:action="@{/findCars}" method="post">
+    <p>Od: </p><input th:type="text" th:field="*{from}" required></p>
+    <p>Do: </p><input th:type="text" th:field="*{to}" required></p>
+    <input type="submit" value="SearchCar">
+</form>
+
+
+</body>
+</html>
